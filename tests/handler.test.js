@@ -1,4 +1,4 @@
-const handler = require('../handler');
+import * as handler  from '../handler';
 
 it('hello', async () => {
   const event = 'event';

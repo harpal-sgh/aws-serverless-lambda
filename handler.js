@@ -1,10 +1,21 @@
-//const func1 = require('./dynamo').func1();
+//const func1 = require('./dynamo');
+import * as abc  from './dynamo';
 
-import { func1 } from './dynamo';
+//import  './dynamo';
 
 exports.hello = async function (event, context) {
-  console.log(func1);
-  console.log(`log: ${await func1}`);
+  console.log(abc.func1('hi', 'test'));
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: ""
+    }),
+  };
+};
+
+
+exports.hello2 = async function (event, context) {
+  console.log(abc.func1('hi', 'test'));
   return {
     statusCode: 200,
     body: JSON.stringify({
