@@ -1,14 +1,14 @@
-export const hello = async (event, context) => {
+//const func1 = require('./dynamo').func1();
+
+import { func1 } from './dynamo';
+
+exports.hello = async function (event, context) {
+  console.log(func1);
+  console.log(`log: ${await func1}`);
   return {
     statusCode: 200,
     body: JSON.stringify({
-      message: `Go Serverless v1.0! ${(await message({ time: 1, copy: 'Your function executed successfully!'}))}`,
+      message: ""
     }),
   };
 };
-
-const message = ({ time, ...rest }) => new Promise((resolve, reject) =>
-  setTimeout(() => {
-    resolve(`${rest.copy} (with a delay)`);
-  }, time * 1000)
-);

@@ -1,6 +1,6 @@
-import * as handler from '../handler';
+const handler = require('../handler');
 
-test('hello', async () => {
+it('hello', async () => {
   const event = 'event';
   const context = 'context';
   const callback = (error, response) => {
